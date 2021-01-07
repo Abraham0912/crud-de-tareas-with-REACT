@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
+import './Tasks.css';
 
 
 class Task extends Component{
     render(){
-        return <div>
+        return <p className="red">
         {this.props.task.title} - {this.props.task.description} - {this.props.task.done} - {this.props.task.id}
         <input type="checkbox"></input>
         <button>x</button>
-    </div>
+    </p>
     }
 }
 
