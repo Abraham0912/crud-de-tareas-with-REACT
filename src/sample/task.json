@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Seminario de investigacion",
+        "description": "Exponer avance de propuestaProyecto",
+        "done": false
+    },
+    {
+        "id": 2,
+        "title": "Seguridad informatica",
+        "description": "realizar 10 scripts de deteccion de bulnerabilidades antes del 29 de enero y expo",
+        "done": false
+    },
+    {
+        "id": 3,
+        "title": "Ingles 1",
+        "description": "Concluir practicas pendientes",
+        "done": false
+    }
+]
