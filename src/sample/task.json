@@ -9,7 +9,7 @@
         "id": 2,
         "title": "Seguridad informatica",
         "description": "realizar 10 scripts de deteccion de bulnerabilidades antes del 29 de enero y expo",
-        "done": false
+        "done": true
     },
     {
         "id": 3,
