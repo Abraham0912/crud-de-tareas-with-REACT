@@ -3,6 +3,7 @@ import './App.css';
 
 import tasksJSON from './sample/task.json';
 import Tasks from './componentes/Tasks';
+import TaskForm from './componentes/TaskForm';
 
 
 class App extends Component{
@@ -11,9 +12,21 @@ class App extends Component{
     task: tasksJSON
   }
 
+  addTask = (title,description)=>{
+    console.log(title,description);
+    const newTask ={
+      title:title,
+      description: description,
+      id: 45
+    }
+    this.setState({
+      task: [...this.state.task,newTask]
+    })
+  }
   render(){
     return <div>
       <h1>Lista de tareas</h1>
+      <TaskForm addTask = {this.addTask}/>
       <Tasks task = {this.state.task}></Tasks>
     </div>
       
