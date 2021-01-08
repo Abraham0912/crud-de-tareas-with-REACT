@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 import tasksJSON from './sample/task.json';
 import Tasks from './componentes/Tasks';
 import TaskForm from './componentes/TaskForm';
+import Posts from './componentes/Posts';
+
+
 
 
 class App extends Component{
@@ -42,13 +46,33 @@ class App extends Component{
     this.setState({task: newTasks});
   }
   render(){
-    return <div>
-      <h1>Lista de tareas</h1>
-      <TaskForm addTask = {this.addTask}/>
-      <Tasks task = {this.state.task} deleteTask = {this.deleteTask} checkDone = {this.checkDone}></Tasks>
+    return  <div>
+    <Router> 
+      <Route path = "/" render={()=>{
+        <div> 
+           <h1>Tareas</h1>
+          <TaskForm addTask = {this.addTask}/>
+          <Tasks 
+            task = {this.state.task} 
+            deleteTask = {this.deleteTask} 
+            checkDone = {this.checkDone}
+          />
+        </div>
+      }}>
+        </Route>
+    </Router>
+       
+     
+       <h1>Lista de tareas</h1>
+          <TaskForm addTask = {this.addTask}/>
+          <Tasks 
+            task = {this.state.task} 
+            deleteTask = {this.deleteTask} 
+            checkDone = {this.checkDone}  />
+      <Posts/>
     </div>
       
-  }
+    }
   funcionPrueba(){
     console.log("hola soy funcionPruebade App.js e imprimo state:");
     console.log(this.state);
