@@ -17,17 +17,35 @@ class App extends Component{
     const newTask ={
       title:title,
       description: description,
-      id: 45
+      id: this.state.task.length
     }
     this.setState({
       task: [...this.state.task,newTask]
     })
   }
+
+
+  deleteTask = (id)=>{
+    const newTasks = this.state.task.filter(task => task.id !== id);
+    //console.log(newTasks);
+    this.setState({
+      task: newTasks
+    })
+  }
+  checkDone= (id)=>{
+    const newTasks = this.state.task.map(task=>{
+      if(task.id === id){
+        task.done = !task.done;
+      }
+      return task;
+    });
+    this.setState({task: newTasks});
+  }
   render(){
     return <div>
       <h1>Lista de tareas</h1>
       <TaskForm addTask = {this.addTask}/>
-      <Tasks task = {this.state.task}></Tasks>
+      <Tasks task = {this.state.task} deleteTask = {this.deleteTask} checkDone = {this.checkDone}></Tasks>
     </div>
       
   }
